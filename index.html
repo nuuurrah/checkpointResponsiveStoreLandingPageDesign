@@ -1,0 +1,146 @@
+<!doctype html>
+<!--
+  ============================================================
+  RESPONSIVE STORE LANDING PAGE  (index.html)
+  ============================================================
+  HOW TO USE:
+  1. Keep this file, "style.css" and the "images" folder together
+     in the same folder.
+  2. Double-click index.html to open it in any web browser.
+  3. To test mobile view: right-click > Inspect > click the
+     phone/tablet icon (Toggle Device Toolbar), or just make the
+     browser window narrow.
+
+  PAGE STRUCTURE:
+  - <header>  : logo + navigation menu
+  - #home     : hero banner (welcome message)
+  - #products : four product cards
+  - #about    : short "why shop with us" section
+  - <footer>  : contact info + copyright (id="contact")
+  ============================================================
+-->
+<html lang="en">
+  <head>
+    <!-- Character encoding so all symbols display correctly -->
+    <meta charset="UTF-8" />
+
+    <!-- IMPORTANT for responsive design: makes the page fit phone screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ShopEase | Online Store</title>
+
+    <!-- Link to our stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <header class="header">
+      <!-- Store logo / name -->
+      <a href="#home" class="logo">Shop<span>Ease</span></a>
+
+      <!-- Navigation menu: each link jumps to a section using its id -->
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero" id="home">
+      <h1>Shop Smarter, Live Better</h1>
+      <p>Quality products at fair prices, delivered to your door.</p>
+      <!-- This button scrolls down to the products section -->
+      <a href="#products" class="btn">Browse Products</a>
+    </section>
+
+    <!-- ===================== PRODUCT SECTION ===================== -->
+    <section class="products" id="products">
+      <h2 class="section-title">Featured Products</h2>
+
+      <!-- Grid container: holds the product cards -->
+      <div class="product-grid">
+        <!-- Product card 1 -->
+        <div class="card">
+          <img src="images/headphones.svg" alt="Wireless headphones" />
+          <h3>Wireless Headphones</h3>
+          <p>Clear sound and 30-hour battery life for all-day listening.</p>
+          <span class="price">$59.99</span>
+          <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <!-- Product card 2 -->
+        <div class="card">
+          <img src="images/watch.svg" alt="Smart watch" />
+          <h3>Smart Watch</h3>
+          <p>Track your steps, heart rate and messages at a glance.</p>
+          <span class="price">$89.99</span>
+          <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <!-- Product card 3 -->
+        <div class="card">
+          <img src="images/backpack.svg" alt="Travel backpack" />
+          <h3>Travel Backpack</h3>
+          <p>Water-resistant bag with a padded laptop pocket.</p>
+          <span class="price">$45.00</span>
+          <a href="#" class="btn">Shop Now</a>
+        </div>
+
+        <!-- Product card 4 -->
+        <div class="card">
+          <img src="images/sneakers.svg" alt="Running sneakers" />
+          <h3>Running Sneakers</h3>
+          <p>Lightweight and comfortable for running or everyday wear.</p>
+          <span class="price">$69.50</span>
+          <a href="#" class="btn">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section class="about" id="about">
+      <h2 class="section-title">Why Shop With Us?</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>Free Delivery</h3>
+          <p>On all orders over $50.</p>
+        </div>
+        <div class="feature">
+          <h3>Easy Returns</h3>
+          <p>30-day hassle-free returns.</p>
+        </div>
+        <div class="feature">
+          <h3>Secure Payment</h3>
+          <p>Your details are always protected.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer" id="contact">
+      <div class="footer-content">
+        <!-- Footer column 1: about the store -->
+        <div>
+          <h3>ShopEase</h3>
+          <p>Your friendly online store.</p>
+        </div>
+        <!-- Footer column 2: contact details (placeholder) -->
+        <div>
+          <h3>Contact</h3>
+          <p>Email: hello@shopease.com</p>
+          <p>Phone: +254 700 000 000</p>
+        </div>
+        <!-- Footer column 3: quick links -->
+        <div>
+          <h3>Quick Links</h3>
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 ShopEase. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

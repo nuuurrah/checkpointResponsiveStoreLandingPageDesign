@@ -1,0 +1,322 @@
+/* ============================================================
+   RESPONSIVE STORE LANDING PAGE  (style.css)
+   ============================================================
+   HOW THIS FILE IS ORGANISED:
+   1. Colour variables  - change the theme colours in one place
+   2. Basic reset       - removes default browser spacing
+   3. Header & nav
+   4. Hero section
+   5. Buttons
+   6. Product section   - uses CSS Grid for the cards
+   7. About section
+   8. Footer
+   9. Media queries     - adjust the layout for tablets & phones
+
+   TIP: To change the main colour of the whole site, edit
+   --primary in section 1.
+   ============================================================ */
+
+/* ---------- 1. COLOUR VARIABLES ---------- */
+:root {
+  --primary: #ff6b35; /* orange: buttons, logo, highlights */
+  --primary-dark: #e0551f; /* darker orange for hover effects   */
+  --dark: #1f2937; /* dark grey: header & footer        */
+  --light: #f7f7f7; /* light grey: page background       */
+  --text: #333333; /* normal text colour                */
+  --white: #ffffff;
+}
+
+/* ---------- 2. BASIC RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding is included in element width */
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scrolling when nav links are clicked */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Shared heading style used by each section */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--dark);
+}
+
+/* ---------- 3. HEADER & NAVIGATION ---------- */
+.header {
+  display: flex; /* logo and nav sit side by side */
+  justify-content: space-between; /* push them to opposite sides   */
+  align-items: center;
+  padding: 15px 8%;
+  background-color: var(--dark);
+  position: sticky; /* header stays on top when scrolling */
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primary); /* "Ease" is shown in orange */
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* ---------- 4. HERO SECTION ---------- */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  color: var(--white);
+  /* Diagonal gradient background - no image file needed */
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Hero button is white so it stands out on the orange background */
+.hero .btn {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+.hero .btn:hover {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+/* ---------- 5. BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 25px; /* rounded "pill" shape */
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ---------- 6. PRODUCT SECTION ---------- */
+.products {
+  padding: 70px 8%;
+}
+
+/* Grid: 4 columns on desktop (changed in the media queries below) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+/* Card lifts up slightly when the mouse is over it */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%; /* image fills the card width */
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--dark);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+.price {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+/* ---------- 7. ABOUT SECTION ---------- */
+.about {
+  padding: 60px 8%;
+  background-color: var(--white);
+}
+
+/* Flexbox: the three feature boxes sit in a row */
+.features {
+  display: flex;
+  gap: 25px;
+}
+
+.feature {
+  flex: 1; /* each box takes equal width */
+  text-align: center;
+  padding: 25px;
+  border-radius: 12px;
+  background-color: var(--light);
+  border-top: 4px solid var(--primary);
+}
+
+.feature h3 {
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+/* ---------- 8. FOOTER ---------- */
+.footer {
+  background-color: var(--dark);
+  color: #cccccc;
+  padding: 40px 8% 20px;
+}
+
+/* Three footer columns side by side */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.footer h3 {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+/* Footer links are stacked one per line */
+.footer a {
+  display: block;
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--primary);
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid #444444;
+  padding-top: 15px;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   9. MEDIA QUERIES (RESPONSIVE DESIGN)
+   The rules below only apply when the screen is narrower than
+   the given width. They override the desktop styles above.
+   ============================================================ */
+
+/* ---- Tablets (screens 992px wide or less) ---- */
+@media (max-width: 992px) {
+  /* 2 product cards per row instead of 4 */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* ---- Mobile phones (screens 600px wide or less) ---- */
+@media (max-width: 600px) {
+  /* Header: stack logo above the menu and centre them */
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 5%;
+  }
+
+  .nav a {
+    margin: 0 10px;
+    font-size: 0.95rem;
+  }
+
+  /* Smaller hero text so it fits a phone screen */
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* 1 product card per row */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products,
+  .about {
+    padding: 50px 5%;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  /* Feature boxes and footer columns stack vertically */
+  .features,
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
